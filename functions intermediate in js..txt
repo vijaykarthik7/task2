@@ -1,0 +1,121 @@
+function dog(){
+    setTimeout(()=>{
+        console.log("j")
+    },2000);
+}
+
+function cat(){
+    console.log("hello");
+}
+
+dog();
+cat();
+
+function dog(callback){
+    setTimeout(()=>{
+        console.log("j")
+        callback();
+    },2000);
+}
+
+function cat(){
+    console.log("hello");
+}
+
+dog(cat);
+
+function attendnance(lunch){
+    setTimeout(()=>{
+        console.log("Attendnance Created");
+        lunch();
+    },1000)
+}
+
+function lunch(gohome){
+    setTimeout(()=>{
+        console.log("Get the Lunch");
+        gohome();
+    },2000)
+}
+
+function goingtoHome(callback){
+    setTimeout(()=>{
+        console.log("Going Back Home");
+        callback();
+    },3000)
+}
+
+attendnance(()=>{
+    lunch(()=>{
+        goingtoHome(()=>{
+            console.log("Day Completed");
+        })
+    })
+})
+
+function attendnance(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let ap=true;
+            if(ap){
+                resolve("App");
+            }
+            else{
+                reject("NoPP");
+            }
+        },1500)
+    })
+}
+
+function brain(){
+    return new Promise((resolve,reject)=>{
+        let h=true;
+        if(h){
+            resolve("Your Brain Promised Me");
+        }
+        else{
+            reject("You Rejected");
+        }
+    })
+}
+
+brain().then((op)=>{console.log(op); return attendnance();})
+.then((op)=>{console.log(op);console.log("Hello");})
+.catch((error)=>console.error(error));
+
+async function finalday(){
+    try{
+        let att=await attendnance();
+        console.log(att);
+        let has=await brain();
+        console.log(has)
+    }
+    catch(error){
+        console.error("Error");
+    }
+}
+
+finalday();
+
+function bein(a,callback){
+    setTimeout(()=>{
+        console.log(`File ${a} started processing`);
+    },1000)
+    setTimeout(()=>{
+        console.log(`File ${a} processed`);
+        callback(a);
+    },3000)
+}
+
+function down(fie){
+    setTimeout(()=>{
+        console.log(`File ${fie} downloaded`);
+    },5000)
+}
+
+bein("ABC",down);
+
+
+(condititon) ? true statement :false statement
+
+react is a single page 

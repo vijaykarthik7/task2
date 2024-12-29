@@ -1,0 +1,30 @@
+let used with in the block
+var used with in the global
+const used only constant value
+let is used in the most ways
+
+number,int,string,BigInt are the variables
+when we calling the function inside the object we need to call console and console.
+
+let student1={
+hello:function(){
+console.log("Hi");
+}
+
+student1.hello()
+console.log(hello)
+
+
+shortcircuit operators-> (logical and) and (logical or)
+ In and if one side is false then it false and in or when the one side is true then next side will not check
+
+let a=(30>4)||(9<5)
+let a=(30>4)&&(9<5)
+
+pre increment->++a
+post increment->a++ first it will increment and then next
+
+Bitwise operator hw
+
+
+https://sivakanagapriyanv2145.github.io/hosthtml/
